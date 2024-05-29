@@ -58,7 +58,7 @@
         /*
         * Imprime una estructura de signos más y menos en forma de X y cruz.
         */
-        public void dkF16() {
+        public void dkF16(int dkNivel) {
             /*
             Objetivo:
                +               +
@@ -67,27 +67,37 @@
                    -       -
                +               +
             */
-    
-            int dkCentro = dkNivel / 2;
-            for (int i = 0; i < dkNivel; i++) {
-                for (int j = 0; j < dkNivel; j++) {
-                    if (i == j || i + j == dkNivel - 1) {
-                        System.out.print("+ ");
-                    } else if (i == dkCentro || j == dkCentro) {
-                        System.out.print("- ");
-                    } else {
-                        System.out.print("  ");
-                    }
-                }
-                System.out.println();
-            }
+
+             char caracterActual = '-';
+             char caracterSiguiente = '+';
+     
+             for (int i = 0; i < dkNivel; i++) {
+                 for (int j = 0; j < dkNivel; j++) {
+                     if (j == i || j == dkNivel - 1 - i) {
+                         if (i == dkNivel / 2) {
+                             System.out.print('+');
+                         } else {
+                             System.out.print(caracterActual);
+                         }
+                     } else {
+                         System.out.print(' ');
+                     }
+                 }
+                 // Alternar el carácter sin usar operador ternario
+                 char temp = caracterActual;
+                 caracterActual = caracterSiguiente;
+                 caracterSiguiente = temp;
+     
+                 System.out.println();
+             } 
+
         }   
         
 
         /*
         * Imprime una estructura de unos y ceros en forma de X y cruz.
         */
-        public void dkF17() {
+        public void dkF17(int dkNivel) {
             /*
             Objetivo:
                1               1
@@ -97,19 +107,28 @@
                1               1
             */
     
-            int dkCentro = dkNivel / 2;
-            for (int i = 0; i < dkNivel; i++) {
-                for (int j = 0; j < dkNivel; j++) {
-                    if (i == j || i + j == dkNivel - 1) {
-                        System.out.print("1 ");
-                    } else if (i == dkCentro || j == dkCentro) {
-                        System.out.print("0 ");
-                    } else {
-                        System.out.print("  ");
-                    }
-                }
-                System.out.println();
-            }
+            char caracterActual = '0';
+             char caracterSiguiente = '1';
+     
+             for (int i = 0; i < dkNivel; i++) {
+                 for (int j = 0; j < dkNivel; j++) {
+                     if (j == i || j == dkNivel - 1 - i) {
+                         if (i == dkNivel / 2) {
+                             System.out.print('1');
+                         } else {
+                             System.out.print(caracterActual);
+                         }
+                     } else {
+                         System.out.print(' ');
+                     }
+                 }
+                 // Alternar el carácter sin usar operador ternario
+                 char temp = caracterActual;
+                 caracterActual = caracterSiguiente;
+                 caracterSiguiente = temp;
+     
+                 System.out.println();
+             } 
         }
 
         /*
