@@ -121,13 +121,13 @@ public class App {
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
         DLK.setDkNivel(nivelesFiguras);
-        DLK.dkF16();
+        DLK.dkF16(DLK.getDkNivel());
 
         System.out.println("F17: ");
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
         DLK.setDkNivel(nivelesFiguras);
-        DLK.dkF17();
+        DLK.dkF17(DLK.getDkNivel());
 
         System.out.println("F18: ");
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
