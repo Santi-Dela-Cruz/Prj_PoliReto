@@ -8,11 +8,16 @@ public class App {
         char caracterUsuario;
         int numeroRepeticionesUsuario;
         char letraFinalUsuario;
+        int nivelesFiguras;
+
+        // Instanciaminetos
+        DeLaCruzKevin DLK = new DeLaCruzKevin(1);
 
         // Ejecucion del codigo
         System.out.println("GRUPO 2");
         System.out.println("Integrantes del grupo:");
         System.out.println("Marcos Cuenca");
+        System.out.println("De La Cruz Kevin");
 
 
 
@@ -37,11 +42,14 @@ public class App {
         System.out.println(
                 "Para algunos de estos ejercicios se necesitara un caracter a su eleccion, para otros una cantidad de repeticiones, y para otros la letra final para finalizar la serie");
         System.out.println("Ingresa un caracter a tu eleccion");
-        caracterUsuario = sc.next().charAt(0);
+        //caracterUsuario = sc.next().charAt(0);
+        caracterUsuario = Validadores.validarIngresoCaracteres(sc);
         System.out.println("Ingresa el numero de repeticiones que realizaran algunas series");
-        numeroRepeticionesUsuario = sc.nextInt();
+        //numeroRepeticionesUsuario = sc.nextInt();
+        numeroRepeticionesUsuario = Validadores.validarIngresoEnteros(sc);
         System.out.println("Ingresa la letra con la que finalizaran ciertas series");
-        letraFinalUsuario = sc.next().charAt(0);
+        //letraFinalUsuario = sc.next().charAt(0);
+        letraFinalUsuario = Validadores.validarIngresoLetra(sc);
 
         System.out.println("SC1: ");
         System.out.println("");
@@ -95,14 +103,44 @@ public class App {
 
 
         System.out.println("----------------Ejercicios de la serie de figuras------------------");
+        /*
+         F1
+         F2
+         F3
+         F4
+         ...
+         */
+        
+        System.out.println("F15: ");
+        System.out.print("Ingrese el nivel que desea que tenga la figura: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        DLK.setDkNivel(nivelesFiguras);
+        DLK.dkF15();
 
+        System.out.println("F16: ");
+        System.out.print("Ingrese el nivel que desea que tenga la figura: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        DLK.setDkNivel(nivelesFiguras);
+        DLK.dkF16();
 
+        System.out.println("F17: ");
+        System.out.print("Ingrese el nivel que desea que tenga la figura: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        DLK.setDkNivel(nivelesFiguras);
+        DLK.dkF17();
 
+        System.out.println("F18: ");
+        System.out.print("Ingrese el nivel que desea que tenga la figura: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        DLK.setDkNivel(nivelesFiguras);
+        DLK.dkF18();
 
-
-
-
-
+        System.out.println("F19: ");
+        System.out.print("Ingrese el nivel que desea que tenga la figura: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        DLK.setDkNivel(nivelesFiguras);
+        DLK.dkF19();
         
     }
 }
+
