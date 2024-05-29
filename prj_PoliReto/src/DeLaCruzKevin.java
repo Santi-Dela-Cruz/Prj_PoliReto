@@ -1,0 +1,174 @@
+    /**
+     * Clase que proporciona diversos metodos tanto get/set y metodos que realizan una operaciones basada en diferentes series.
+     * @author De La Cruz Kevin.
+     */
+    public class DeLaCruzKevin {
+        private int dkNivel;
+
+        /**
+         * Metodo que inicializa el nivel/tamano
+         * @param nivel: Valor del nivel/tamano inicial.
+         */
+        public DeLaCruzKevin(int nivel) {
+            this.dkNivel = nivel;
+        }
+
+        /**
+         * Metodo que establece el nivel/tamano
+         * @param dkNivel: Valor del nuevo nivel/tamano.
+         */
+        public void setDkNivel(int dkNivel) {
+            this.dkNivel = dkNivel;
+        }
+
+        /**
+         * Metodo que obtiene el nivel/tamno actual
+         * @return int: Retorna el nivel actual
+         */
+        public int getDkNivel() {
+            return this.dkNivel;
+        }
+
+        /*
+        * Imprime el triángulo de Pascal hasta el nivel dado.
+        */
+        public void dkF15() {
+
+            /*
+            Objetivo:
+            1
+            1  1
+            1  2  1
+            1  3  3  1
+            1  4  6  4  1
+            1  5 10 10  5  1
+            */
+
+            System.out.println();
+            for (int i = 0; i < dkNivel; i++) {
+                int res = 1;
+                for (int j = 0; j <= i; j++) {
+                    System.out.print(res + " ");
+                    res = res * (i - j) / (j + 1);
+                }
+                System.out.println();
+            }
+        }
+
+        /*
+        * Imprime una estructura de signos más y menos en forma de X y cruz.
+        */
+        public void dkF16() {
+            /*
+            Objetivo:
+               +               +
+                   -       -
+                       +
+                   -       -
+               +               +
+            */
+    
+            int dkCentro = dkNivel / 2;
+            for (int i = 0; i < dkNivel; i++) {
+                for (int j = 0; j < dkNivel; j++) {
+                    if (i == j || i + j == dkNivel - 1) {
+                        System.out.print("+ ");
+                    } else if (i == dkCentro || j == dkCentro) {
+                        System.out.print("- ");
+                    } else {
+                        System.out.print("  ");
+                    }
+                }
+                System.out.println();
+            }
+        }   
+        
+
+        /*
+        * Imprime una estructura de unos y ceros en forma de X y cruz.
+        */
+        public void dkF17() {
+            /*
+            Objetivo:
+               1               1
+                   0       0
+                       1
+                   0       0
+               1               1
+            */
+    
+            int dkCentro = dkNivel / 2;
+            for (int i = 0; i < dkNivel; i++) {
+                for (int j = 0; j < dkNivel; j++) {
+                    if (i == j || i + j == dkNivel - 1) {
+                        System.out.print("1 ");
+                    } else if (i == dkCentro || j == dkCentro) {
+                        System.out.print("0 ");
+                    } else {
+                        System.out.print("  ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+
+        /*
+        * Imprime una secuencia de números en formato de triángulo.
+        */
+        public void dkF18() {
+
+            /*
+            Objetivo:
+            2
+            1 2
+            1 3 2
+            1 4 5 2
+            1 5 9 7 2
+            ...
+            */
+
+            System.out.println();
+            for (int i = 0; i < dkNivel; i++) {
+                for (int j = 0; j <= i; j++) {
+                    if (j == 0) {
+                        System.out.print(1 + " ");
+                    } else if (j == i) {
+                        System.out.print(2 + " ");
+                    } else {
+                        System.out.print(i + j + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+
+        /*
+        * Imprime una estructura de signos más y asteriscos en formato de triángulo.
+        */
+        public void dkF19() {
+
+            /*
+            Objetivo:
+            *
+            * *
+            * 3 *
+            * 4 5 *
+            * 5 9 7 *
+            ...
+            */
+            
+            System.out.println();
+            for (int i = 0; i < dkNivel; i++) {
+                for (int j = 0; j <= i; j++) {
+                    if (j == 0) {
+                        System.out.print("+ ");
+                    } else if (j == i) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print(i + j + " ");
+                    }
+                }
+                System.out.println();
+            }
+        }
+    }
