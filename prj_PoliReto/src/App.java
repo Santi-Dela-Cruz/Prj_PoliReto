@@ -140,6 +140,8 @@ public class App {
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
         DLK.setDkNivel(nivelesFiguras);
         DLK.dkF19();
+
+        System.out.println("Finalizacion del programa");
         
     }
 }
