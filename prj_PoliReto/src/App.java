@@ -1,11 +1,11 @@
 import java.util.Scanner;
-
 public class App {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
         // Definicion de variables
         int numeroFinalUsuario;
+        int tamanoSerie;
         char caracterUsuario, caracterUsuarioDos;
         int numeroRepeticionesUsuario;
         char letraFinalUsuario;
@@ -15,6 +15,7 @@ public class App {
         CuencaMarcos imprimirMCSC = new CuencaMarcos();
         DeLaCruzKevin DLK = new DeLaCruzKevin(1);
         FuentesCarlos CF = new FuentesCarlos();
+        EcheverriaGabriela EG = new EcheverriaGabriela();
 
         // Ejecucion del codigo
         System.out.println("GRUPO 2");
@@ -22,6 +23,7 @@ public class App {
         System.out.println("Marcos Cuenca");
         System.out.println("De La Cruz Kevin");
         System.out.println("Fuentes Carlos");
+        System.out.println("Echeverria Gabriela");
 
 
 
@@ -33,6 +35,34 @@ public class App {
         System.out.println("----------------Ejercicios de la serie de numeros-----------------");
         System.out.println("Para algunos de las siguientes series, se necesitara ingresar un numero que sera utilizado para el final de la serie ");
         System.out.println("RECORDATORIO: si el numero ingresado es menor, la serie se adaptara al numero mas cercano");
+        System.out.print("Ingrese el tamaño de la serie 1 (SN1): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES1();
+        System.out.print("Ingrese el tamaño de la serie 2 (SN2): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES2();
+        System.out.print("Ingrese el tamaño de la serie 3 (SN3): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES3();
+        System.out.print("Ingrese el tamaño de la serie 4 (SN4): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES4();
+        System.out.print("Ingrese el tamaño de la serie 5 (SN5): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES5();
+        System.out.print("Ingrese el tamaño de la serie 6 (SN6): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES6();
+        System.out.print("Ingrese el tamaño de la serie 7 (SN7): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES7();
         System.out.println("Ingrese un numero que finalizara las series: ");
         numeroFinalUsuario = Validadores.validarIngresoEnteros(sc);
         System.out.print("SN8: ");
@@ -47,16 +77,6 @@ public class App {
         System.out.print("SN12: ");
         CF.CFSN12(numeroFinalUsuario);
         System.out.println("");
-
-
-
-
-
-
-
-
-
-
 
         System.out.println("----------------Ejercicios de la serie de caracteres-----------------");
         System.out.println(
