@@ -19,15 +19,16 @@ public class App {
         CuasapazJonathan CJ = new CuasapazJonathan();
 
         // Ejecucion del codigo
+        // Ingresar sus nombres por favor
+        System.out.println();
         System.out.println("GRUPO 2");
         System.out.println("Integrantes del grupo:");
-        System.out.println("Marcos Cuenca");
-        System.out.println("De La Cruz Kevin");
-        System.out.println("Fuentes Carlos");
-        System.out.println("Echeverria Gabriela");
-        System.out.println("Cuasapaz Jonathan");
+        System.out.println("-   Marcos Cuenca");
+        System.out.println("-   De La Cruz Kevin");
+        System.out.println("-   Fuentes Carlos");
+        System.out.println("-   Echeverria Gabriela");
+        System.out.println("-   Cuasapaz Jonathan");
 
-        // Ingresar sus nombres por favor
 
         System.out.println( );
         System.out.println("----------------Ejercicios de la serie de numeros-----------------");
@@ -79,10 +80,9 @@ public class App {
 
         System.out.println( );
         System.out.println("----------------Ejercicios de la serie de caracteres-----------------");
-        System.out.println(
-                "Para algunos de estos ejercicios se necesitara un caracter a su eleccion, para otros una cantidad de repeticiones, y para otros la letra final para finalizar la serie");
+        System.out.println("Para algunos de estos ejercicios se necesitara un caracter a su eleccion, para otros una cantidad de repeticiones, y para otros la letra final para finalizar la serie");
         System.out.println( );
-                System.out.println("Ingresa el primer caracter a tu eleccion");
+        System.out.println("Ingresa el primer caracter a tu eleccion");
         caracterUsuario = Validadores.validarIngresoCaracteres(sc);
         System.out.println("Ingresa el segundo caracter a tu eleccion");
         caracterUsuarioDos = Validadores.validarIngresoCaracteres(sc);
@@ -130,9 +130,6 @@ public class App {
         imprimirMCSC.MCSC10(letraFinalUsuario);
         System.out.println("");
         System.out.println("");
-
-
-
 
 
 
@@ -211,6 +208,9 @@ public class App {
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
         DLK.setDkNivel(nivelesFiguras);
         DLK.dkF19();
+
+        System.out.println();
+        System.out.println("Finalizacion del programa");
         
     }
 }
