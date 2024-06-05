@@ -6,15 +6,18 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Definicion de variables
         int numeroFinalUsuario;
-        char caracterUsuario, caracterUsuarioDos;
+        int tamanoFiguras;
         int numeroRepeticionesUsuario;
-        char letraFinalUsuario;
         int nivelesFiguras;
+        char caracterUsuario, caracterUsuarioDos;
+        char letraFinalUsuario;
+        
 
         // Instanciaminetos
         CuencaMarcos imprimirMCSC = new CuencaMarcos();
         DeLaCruzKevin DLK = new DeLaCruzKevin(1);
         FuentesCarlos CF = new FuentesCarlos();
+        ZambranoDante ZD = new ZambranoDante();
 
         // Ejecucion del codigo
         System.out.println("GRUPO 2");
@@ -22,6 +25,7 @@ public class App {
         System.out.println("Marcos Cuenca");
         System.out.println("De La Cruz Kevin");
         System.out.println("Fuentes Carlos");
+        System.out.println("Zambrano Dante");
 
 
 
@@ -123,7 +127,48 @@ public class App {
          F4
          ...
          */
-        
+        System.out.println("F8: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF8(tamanoFiguras);
+        System.out.println("");
+
+        System.out.println("F9: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF9(tamanoFiguras);
+        System.out.println("");
+
+        System.out.println("F10: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF10(tamanoFiguras);
+        System.out.println("");
+
+        System.out.println("F11: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF11(tamanoFiguras);
+        System.out.println("");
+
+        System.out.println("F12: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF12(tamanoFiguras);
+        System.out.println("");
+
+        System.out.println("F13: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF13(tamanoFiguras);
+        System.out.println("");
+
+        System.out.println("F14: ");
+        System.out.println("Ingrese el tamano que desea");
+        tamanoFiguras = Validadores.validarIngresoEnteros(sc);
+        ZD.zdF14(tamanoFiguras);
+        System.out.println("");
+
         System.out.println("F15: ");
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
