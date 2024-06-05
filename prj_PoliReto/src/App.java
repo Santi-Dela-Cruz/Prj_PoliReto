@@ -1,101 +1,129 @@
 import java.util.Scanner;
-
 public class App {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
         // Definicion de variables
-        char caracterUsuario;
+        int numeroFinalUsuario;
+        int tamanoSerie;
+        char caracterUsuario, caracterUsuarioDos;
         int numeroRepeticionesUsuario;
         char letraFinalUsuario;
         int nivelesFiguras;
 
         // Instanciaminetos
+        CuencaMarcos imprimirMCSC = new CuencaMarcos();
         DeLaCruzKevin DLK = new DeLaCruzKevin(1);
+        FuentesCarlos CF = new FuentesCarlos();
+        EcheverriaGabriela EG = new EcheverriaGabriela();
 
         // Ejecucion del codigo
+        System.out.println();
         System.out.println("GRUPO 2");
         System.out.println("Integrantes del grupo:");
-        System.out.println("Marcos Cuenca");
-        System.out.println("De La Cruz Kevin");
+        System.out.println("-   Marcos Cuenca");
+        System.out.println("-   De La Cruz Kevin");
+        System.out.println("-   Fuentes Carlos");
+        System.out.println("-   Echeverria Gabriela");
 
-
-
-
-
-        // Ingresar sus nombres por favor
-
+        // Ingresar sus nombres por favor       
         System.out.println("----------------Ejercicios de la serie de numeros-----------------");
+        System.out.println("Para algunos de las siguientes series, se necesitara ingresar un numero que sera utilizado para el final de la serie ");
+        System.out.println("RECORDATORIO: si el numero ingresado es menor, la serie se adaptara al numero mas cercano");
+        System.out.print("Ingrese el tamaño de la serie 1 (SN1): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES1();
+        System.out.print("Ingrese el tamaño de la serie 2 (SN2): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES2();
+        System.out.print("Ingrese el tamaño de la serie 3 (SN3): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES3();
+        System.out.print("Ingrese el tamaño de la serie 4 (SN4): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES4();
+        System.out.print("Ingrese el tamaño de la serie 5 (SN5): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES5();
+        System.out.print("Ingrese el tamaño de la serie 6 (SN6): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES6();
+        System.out.print("Ingrese el tamaño de la serie 7 (SN7): ");
+        tamanoSerie = Validadores.validarIngresoEnteros(sc);
+        EG.setGEnum(tamanoSerie);
+        EG.GES7();
+        System.out.println("Ingrese un numero que finalizara las series: ");
+        numeroFinalUsuario = Validadores.validarIngresoEnteros(sc);
+        System.out.print("SN8: ");
+        CF.CFSN8(numeroFinalUsuario);
         System.out.println("");
-
-
-
-
-
-
-
-
-
-
+        System.out.print("SN9: ");
+        CF.CFSN9(numeroFinalUsuario);
+        System.out.println("");
+        System.out.print("SN10: ");
+        CF.CFSN10(numeroFinalUsuario);
+        System.out.println("");
+        System.out.print("SN12: ");
+        CF.CFSN12(numeroFinalUsuario);
+        System.out.println("");
 
         System.out.println("----------------Ejercicios de la serie de caracteres-----------------");
         System.out.println(
                 "Para algunos de estos ejercicios se necesitara un caracter a su eleccion, para otros una cantidad de repeticiones, y para otros la letra final para finalizar la serie");
-        System.out.println("Ingresa un caracter a tu eleccion");
-        //caracterUsuario = sc.next().charAt(0);
+        System.out.println("Ingresa el primer caracter a tu eleccion");
         caracterUsuario = Validadores.validarIngresoCaracteres(sc);
+        System.out.println("Ingresa el segundo caracter a tu eleccion");
+        caracterUsuarioDos = Validadores.validarIngresoCaracteres(sc);
         System.out.println("Ingresa el numero de repeticiones que realizaran algunas series");
-        //numeroRepeticionesUsuario = sc.nextInt();
         numeroRepeticionesUsuario = Validadores.validarIngresoEnteros(sc);
         System.out.println("Ingresa la letra con la que finalizaran ciertas series");
-        //letraFinalUsuario = sc.next().charAt(0);
         letraFinalUsuario = Validadores.validarIngresoLetra(sc);
 
         System.out.println("SC1: ");
+        CF.CFSC1(caracterUsuario, caracterUsuarioDos, numeroRepeticionesUsuario);
         System.out.println("");
-
         System.out.println("SC2: ");
+        CF.CFSC2(caracterUsuarioDos, numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC3: ");
-        CuencaMarcos imprimirMCSC3 = new CuencaMarcos();
-        imprimirMCSC3.MCSC3(caracterUsuario, numeroRepeticionesUsuario);
+        imprimirMCSC.MCSC3(caracterUsuario, numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC4: ");
-        CuencaMarcos imprimirMCSC4 = new CuencaMarcos();
-        imprimirMCSC4.MCSC4(numeroRepeticionesUsuario);
+        imprimirMCSC.MCSC4(numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC5: ");
-        CuencaMarcos imprimirMCSC5 = new CuencaMarcos();
-        imprimirMCSC5.MCSC5(numeroRepeticionesUsuario);
+        imprimirMCSC.MCSC5(numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC6: ");
-        CuencaMarcos imprimirMCSC6 = new CuencaMarcos();
-        imprimirMCSC6.MCSC6(letraFinalUsuario);
+        imprimirMCSC.MCSC6(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC7: ");
-        CuencaMarcos imprimirMCSC7 = new CuencaMarcos();
-        imprimirMCSC7.MCSC7(letraFinalUsuario);
+        imprimirMCSC.MCSC7(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC8: ");
-        CuencaMarcos imprimirMCSC8 = new CuencaMarcos();
-        imprimirMCSC8.MCSC8(letraFinalUsuario);
+        imprimirMCSC.MCSC8(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC9: ");
-        CuencaMarcos imprimirMCSC9 = new CuencaMarcos();
-        imprimirMCSC9.MCSC9(letraFinalUsuario);
-        System.out.println("");
+        imprimirMCSC.MCSC9(letraFinalUsuario);
         System.out.println("");
 
-
-
-
+        System.out.println("SC10: ");
+        imprimirMCSC.MCSC10(letraFinalUsuario);
+        System.out.println("");
+        System.out.println("");
 
 
 
@@ -141,6 +169,7 @@ public class App {
         DLK.setDkNivel(nivelesFiguras);
         DLK.dkF19();
 
+        System.out.println();
         System.out.println("Finalizacion del programa");
         
     }
