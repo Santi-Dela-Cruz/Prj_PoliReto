@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Clase que realiza las series de caracteres de la 3 a la 10
  * 
@@ -180,5 +182,167 @@ public class CuencaMarcos {
                 mcValorLetra2 = mcTotalRepeticiones;
             }
         }
+    }
+
+    //Ejercicios nuevos
+    /*
+     * Metodo que devuelve la frase ingresada pero sin una vocal elegida por el usuario
+     */
+    public void MCC03 (String frase, char vocalEliminada){
+        String fraseSinVocal = "";
+
+        for (int i=0; i<frase.length(); i++){
+            char letraActual = frase.charAt(i);
+            if (letraActual==vocalEliminada){
+                fraseSinVocal+=" ";
+            } else {
+                fraseSinVocal+=letraActual;
+            }
+        }
+        System.out.println("Frase elegida: "+frase);
+        System.out.println("Vocal a eliminar: "+vocalEliminada);
+        System.out.println("Frase sin la vocal: "+fraseSinVocal);
+
+    }
+
+    /*
+     * Metodo que devuelve la frase ingresada pero sin una letra elegida por el usuario
+     */
+    public void MCC04 (String frase, char letraEliminada){
+        String fraseSinLetra = "";
+
+        for (int i=0; i<frase.length(); i++){
+            char letraActual = frase.charAt(i);
+            if (letraActual==letraEliminada){
+                fraseSinLetra+=" ";
+            } else {
+                fraseSinLetra+=letraActual;
+            }
+        }
+        System.out.println("Frase elegida: "+frase);
+        System.out.println("Letra a eliminar: "+letraEliminada);
+        System.out.println("Frase sin la letra: "+fraseSinLetra);
+
+    }
+
+    /*
+     * Metodo que devuelve las iniciales MC impresas dado un tamano y un caracter dados por el usuario
+     */
+    public void MCA02 (int tamano, char caracter){
+        //Dado que mi nombre es Marcos Cuenca, las iniciales seran MC
+        int anchuraMC = tamano;
+        for (int i = 0; i < tamano; i++) {
+            for (int j = 0; j < tamano; j++) {
+                if ((j == 0) || (j == anchuraMC - 1) || ((i == j) && (j <= anchuraMC / 2)) || ((i + j == anchuraMC - 1) && (j >= anchuraMC / 2))) {
+                    System.out.print(caracter);
+                } else {
+                    System.out.print(" ");
+                }
+                System.out.print(" ");
+            }
+            for (int j = 0; j < anchuraMC; j++) {
+                if ((i == 0) || (i == tamano - 1) || (j == 0)) {
+                    System.out.print(caracter);
+                } else {
+                    System.out.print(" ");
+                }
+            }
+    
+            System.out.println();
+        }    
+    
+    }
+    
+    /*
+     * Metodo que devuelve una barra de carga que se desplaza de izquierda a derecha
+     */
+    public void MCL03 (char caracter){
+        String [] arregloCarga = new String[19];
+
+        for (int porcentajeCarga = 0; porcentajeCarga<101; porcentajeCarga += 20) {
+            for (int i = 0; i < arregloCarga.length; i++){
+                for (int j = 0; j < arregloCarga.length; j++) {
+                    arregloCarga[j] = " ";
+                }
+                arregloCarga[i] = "" + caracter;
+    
+                String cadena = "\r[";
+                for (int s = 0; s < arregloCarga.length; s++){
+                    cadena += arregloCarga[s];
+                }
+                cadena += "] " + porcentajeCarga + "%";
+    
+                System.out.print(cadena);
+
+                try {
+                    Thread.sleep(30);
+                } catch (InterruptedException e) {}
+            }
+
+            for (int i = arregloCarga.length - 1; i > 0; i--) {
+                for (int j = 0; j < arregloCarga.length; j++) {
+                    arregloCarga[j] = " ";
+                }
+                arregloCarga[i] = "" + caracter;
+    
+                String cadena = "\r[";
+                for (int s = 0; s < arregloCarga.length; s++) {
+                    cadena += arregloCarga[s];
+                }
+                cadena += "] " + porcentajeCarga + "%";
+
+                System.out.print(cadena);
+    
+                try {
+                    Thread.sleep(30);
+                } catch (InterruptedException e) {}
+            }
+        }
+    }
+
+    /*
+     * Metodo que devuelve una barra de carga que usa los caracteres o0o para simular movimiento
+     */
+    public void MCL04 (){
+        String [] arregloCarga = new String[3];
+        for (int porcentajeCarga = 0; porcentajeCarga<101; porcentajeCarga+=20){
+            for (int i = 0; i < arregloCarga.length; i++) {
+                for (int j = 0; j < arregloCarga.length; j++) {
+                    arregloCarga[j] = "o";
+                }
+                arregloCarga[i] = "0";
+    
+                String cadena = "\r";
+                for (int s = 0; s < arregloCarga.length; s++) {
+                    cadena += arregloCarga[s];
+                }
+                cadena += "  " + porcentajeCarga + "%";
+
+                System.out.print(cadena);
+    
+                try {
+                    Thread.sleep(250);
+                } catch (InterruptedException e) {}
+            }
+            for (int i = arregloCarga.length-1; i > 0; i--) {
+                for (int j = 0; j < arregloCarga.length; j++) {
+                    arregloCarga[j] = "o";
+                }
+                arregloCarga[i] = "0";
+    
+                String cadena = "\r";
+                for (int s = 0; s < arregloCarga.length; s++) {
+                    cadena += arregloCarga[s];
+                }
+                cadena += "  " + porcentajeCarga + "%";
+
+                System.out.print(cadena);
+    
+                try {
+                    Thread.sleep(250);
+                } catch (InterruptedException e) {}
+            }
+        }
+        
     }
 }
