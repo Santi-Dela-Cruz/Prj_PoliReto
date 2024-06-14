@@ -5,48 +5,42 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Definicion de variables
         int numeroFinalUsuario;
-<<<<<<< HEAD
         int tamanoFiguras;
-=======
         int tamanoSerie;
+        int tamanoLetras;
         char caracterUsuario, caracterUsuarioDos;
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
         int numeroRepeticionesUsuario;
         int nivelesFiguras;
-        char caracterUsuario, caracterUsuarioDos;
         char letraFinalUsuario;
+        String fraseUsuario;
+        String fraseUsuario2;
+        char letraAEliminar;
         
 
         // Instanciaminetos
-        CuencaMarcos imprimirMCSC = new CuencaMarcos();
+        CuencaMarcos MC = new CuencaMarcos();
         DeLaCruzKevin DLK = new DeLaCruzKevin(1);
         FuentesCarlos CF = new FuentesCarlos();
-<<<<<<< HEAD
         ZambranoDante ZD = new ZambranoDante();
-=======
         EcheverriaGabriela EG = new EcheverriaGabriela();
         CuasapazJonathan CJ = new CuasapazJonathan();
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
-
+        
         // Ejecucion del codigo
         // Ingresar sus nombres por favor
         System.out.println();
         System.out.println("GRUPO 2");
         System.out.println("Integrantes del grupo:");
-<<<<<<< HEAD
         System.out.println("Marcos Cuenca");
         System.out.println("De La Cruz Kevin");
         System.out.println("Fuentes Carlos");
         System.out.println("Zambrano Dante");
-=======
         System.out.println("-   Marcos Cuenca");
         System.out.println("-   De La Cruz Kevin");
         System.out.println("-   Fuentes Carlos");
         System.out.println("-   Echeverria Gabriela");
         System.out.println("-   Cuasapaz Jonathan");
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
 
-
+    
         System.out.println( );
         System.out.println("----------------Ejercicios de la serie de numeros-----------------");
         System.out.println("Para algunos de las siguientes series, se necesitara ingresar un numero que sera utilizado para el final de la serie ");
@@ -116,42 +110,41 @@ public class App {
         System.out.println("");
 
         System.out.println("SC3: ");
-        imprimirMCSC.MCSC3(caracterUsuario, numeroRepeticionesUsuario);
+        MC.MCSC3(caracterUsuario, numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC4: ");
-        imprimirMCSC.MCSC4(numeroRepeticionesUsuario);
+        MC.MCSC4(numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC5: ");
-        imprimirMCSC.MCSC5(numeroRepeticionesUsuario);
+        MC.MCSC5(numeroRepeticionesUsuario);
         System.out.println("");
 
         System.out.println("SC6: ");
-        imprimirMCSC.MCSC6(letraFinalUsuario);
+        MC.MCSC6(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC7: ");
-        imprimirMCSC.MCSC7(letraFinalUsuario);
+        MC.MCSC7(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC8: ");
-        imprimirMCSC.MCSC8(letraFinalUsuario);
+        MC.MCSC8(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC9: ");
-        imprimirMCSC.MCSC9(letraFinalUsuario);
+        MC.MCSC9(letraFinalUsuario);
         System.out.println("");
 
         System.out.println("SC10: ");
-        imprimirMCSC.MCSC10(letraFinalUsuario);
+        MC.MCSC10(letraFinalUsuario);
         System.out.println("");
         System.out.println("");
 
 
 
         System.out.println("----------------Ejercicios de la serie de figuras------------------");
-<<<<<<< HEAD
         /*
          F1
          F2
@@ -200,7 +193,7 @@ public class App {
         tamanoFiguras = Validadores.validarIngresoEnteros(sc);
         ZD.zdF14(tamanoFiguras);
         System.out.println("");
-=======
+
         System.out.println("Para estos ejercicios solo se necesita el tamaño del que será cada figura");
         System.out.println( );
 
@@ -245,7 +238,6 @@ public class App {
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
         CJ.setCjTamano(nivelesFiguras);
         CJ.cjF7();
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
 
         System.out.println("F15: ");
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
@@ -277,7 +269,72 @@ public class App {
         DLK.setDkNivel(nivelesFiguras);
         DLK.dkF19();
 
-        System.out.println();
+
+
+
+        System.out.println("----------------Ejercicios de cadenas de caracteres------------------");
+        System.out.println("C01: ");
+
+
+        System.out.println("C02: ");
+
+
+        System.out.println("C03: ");
+        System.out.println("Ingresa una frase");
+        fraseUsuario = sc.nextLine();
+        System.out.println("Ingresa una vocal a eliminar");
+        letraAEliminar = Validadores.validarIngresoVocal(sc);
+        MC.MCC03(fraseUsuario, letraAEliminar);
+        System.out.println("");
+
+        System.out.println("C04: ");
+        System.out.println("Ingresa una frase");
+        fraseUsuario2 = sc.nextLine();
+        System.out.println("Ingresa una letra a eliminar");
+        letraAEliminar = Validadores.validarIngresoLetra(sc);
+        MC.MCC04(fraseUsuario, letraAEliminar);
+        System.out.println("");
+
+
+        System.out.println("----------------Ejercicios de Arrays------------------");
+
+
+
+
+        System.out.println("A02: ");
+        System.out.println("Ingresa el caracter que se usara para dibujar las iniciales del nombre");
+        caracterUsuario = Validadores.validarIngresoCaracteres(sc);
+        System.out.println("Ingresa el tamano que tendran ambas letras");
+        tamanoLetras = Validadores.validarIngresoEnteros(sc);
+        MC.MCA02(tamanoLetras, caracterUsuario);
+        System.out.println("");
+
+
+
+
+
+        System.out.println("----------------Ejercicios de Loading------------------");
+
+
+
+
+
+        System.out.println("L03: ");
+        System.out.println("Ingresa el caracter que se usara en el loading");
+        caracterUsuario = Validadores.validarIngresoCaracteres(sc);
+        MC.MCL03(caracterUsuario);
+        System.out.println("");
+
+        System.out.println("L04: ");
+        MC.MCL04();
+        System.out.println("");
+
+
+
+
+
+    
+    
         System.out.println("Finalizacion del programa");
         
     }

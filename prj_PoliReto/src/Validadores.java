@@ -65,4 +65,27 @@ public class Validadores {
         }
         return validarIngreso;
     }
+
+    /**
+     * Valida que la entrada del usuario sea una vocal minuscula
+     * @param scanner: Se usa para leer el ingreso de datos del usuario.
+     * @return char: Una letra minúscula validada.
+     */
+    public static char validarIngresoVocal(Scanner scanner) {
+        char validarIngreso;
+        while (true) {
+            String ingreso = scanner.next();
+            if (ingreso.length() == 1 && Character.isLowerCase(ingreso.charAt(0)) && ((ingreso.charAt(0)==101)
+                                                                                          ||(ingreso.charAt(0)==105)
+                                                                                          ||(ingreso.charAt(0)==111)
+                                                                                          ||(ingreso.charAt(0)==97)
+                                                                                          ||(ingreso.charAt(0)==117))) {
+                validarIngreso = ingreso.charAt(0);
+                break;
+            } else {
+                System.out.println("Entrada inválida. Intente de nuevo");
+            }
+        }
+        return validarIngreso;
+    }
 }
