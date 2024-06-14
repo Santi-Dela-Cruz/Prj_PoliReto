@@ -5,15 +5,11 @@ public class App {
     public static void main(String[] args) throws Exception {
         // Definicion de variables
         int numeroFinalUsuario;
-<<<<<<< HEAD
         int tamanoFiguras;
-=======
         int tamanoSerie;
         char caracterUsuario, caracterUsuarioDos;
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
         int numeroRepeticionesUsuario;
         int nivelesFiguras;
-        char caracterUsuario, caracterUsuarioDos;
         char letraFinalUsuario;
         
 
@@ -21,30 +17,24 @@ public class App {
         CuencaMarcos imprimirMCSC = new CuencaMarcos();
         DeLaCruzKevin DLK = new DeLaCruzKevin(1);
         FuentesCarlos CF = new FuentesCarlos();
-<<<<<<< HEAD
         ZambranoDante ZD = new ZambranoDante();
-=======
         EcheverriaGabriela EG = new EcheverriaGabriela();
         CuasapazJonathan CJ = new CuasapazJonathan();
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
 
         // Ejecucion del codigo
         // Ingresar sus nombres por favor
         System.out.println();
         System.out.println("GRUPO 2");
         System.out.println("Integrantes del grupo:");
-<<<<<<< HEAD
         System.out.println("Marcos Cuenca");
         System.out.println("De La Cruz Kevin");
         System.out.println("Fuentes Carlos");
         System.out.println("Zambrano Dante");
-=======
         System.out.println("-   Marcos Cuenca");
         System.out.println("-   De La Cruz Kevin");
         System.out.println("-   Fuentes Carlos");
         System.out.println("-   Echeverria Gabriela");
         System.out.println("-   Cuasapaz Jonathan");
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
 
 
         System.out.println( );
@@ -151,7 +141,6 @@ public class App {
 
 
         System.out.println("----------------Ejercicios de la serie de figuras------------------");
-<<<<<<< HEAD
         /*
          F1
          F2
@@ -200,7 +189,6 @@ public class App {
         tamanoFiguras = Validadores.validarIngresoEnteros(sc);
         ZD.zdF14(tamanoFiguras);
         System.out.println("");
-=======
         System.out.println("Para estos ejercicios solo se necesita el tamaño del que será cada figura");
         System.out.println( );
 
@@ -245,7 +233,6 @@ public class App {
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
         CJ.setCjTamano(nivelesFiguras);
         CJ.cjF7();
->>>>>>> 3b188735f23cd49f18926f94e3bfdd1d633be235
 
         System.out.println("F15: ");
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
