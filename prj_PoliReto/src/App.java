@@ -24,6 +24,7 @@ public class App {
         ZambranoDante ZD = new ZambranoDante();
         EcheverriaGabriela EG = new EcheverriaGabriela();
         CuasapazJonathan CJ = new CuasapazJonathan();
+
         
         // Ejecucion del codigo
         // Ingresar sus nombres por favor
@@ -39,6 +40,7 @@ public class App {
         System.out.println("-   Fuentes Carlos");
         System.out.println("-   Echeverria Gabriela");
         System.out.println("-   Cuasapaz Jonathan");
+
 
     
         System.out.println( );
