@@ -29,6 +29,25 @@ public class Validadores {
     }
 
     /**
+     * Valida que la entrada del usuario sea un número de tipo double.
+     * @param sc: Se usa para leer el ingreso de datos del usuario.
+     * @return double: Un número de tipo double validado.
+     */
+    public static double validarIngresoDouble(Scanner sc) {
+        double validarIngreso;
+        while (true) {
+            if (sc.hasNextDouble()) {
+                validarIngreso = sc.nextDouble();
+                break;
+            } else {
+                System.out.println("Entrada inválida. Intente de nuevo");
+                sc.next(); // Descarta la entrada no válida
+            }
+        }
+        return validarIngreso;
+    }
+
+    /**
      * Valida que la entrada del usuario sea un solo carácter.
      * @param scanner: Se usa para leer el ingreso de datos del usuario.
      * @return char: Un carácter validado.
