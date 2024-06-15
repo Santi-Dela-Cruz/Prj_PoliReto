@@ -15,6 +15,7 @@ public class App {
         String fraseUsuario;
         String fraseUsuario2;
         char letraAEliminar;
+        double porcent1, porcent2, porcent3, porcent4;
         
 
         // Instanciaminetos
@@ -31,16 +32,13 @@ public class App {
         System.out.println();
         System.out.println("GRUPO 2");
         System.out.println("Integrantes del grupo:");
-        System.out.println("Marcos Cuenca");
-        System.out.println("De La Cruz Kevin");
-        System.out.println("Fuentes Carlos");
-        System.out.println("Zambrano Dante");
-        System.out.println("-   Marcos Cuenca");
+        System.out.println("-   Cuenca Marcos");
         System.out.println("-   De La Cruz Kevin");
         System.out.println("-   Fuentes Carlos");
         System.out.println("-   Echeverria Gabriela");
         System.out.println("-   Cuasapaz Jonathan");
-
+        System.out.println("-   Zambrano Dante");
+        
 
     
         System.out.println( );
@@ -147,13 +145,49 @@ public class App {
 
 
         System.out.println("----------------Ejercicios de la serie de figuras------------------");
-        /*
-         F1
-         F2
-         F3
-         F4
-         ...
-         */
+
+        System.out.println("F1: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF1();
+
+        System.out.println("F2: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF2();
+        
+        System.out.println("F3: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF3();
+
+        System.out.println("F4: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF4();
+
+        System.out.println("F5: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF5();
+
+        System.out.println("F6: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF6();
+
+        System.out.println("F7: ");
+        System.out.print("Ingrese el tamaño: ");
+        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
+        CJ.setCjTamano(nivelesFiguras);
+        CJ.cjF7();
+
         System.out.println("F8: ");
         System.out.println("Ingrese el tamano que desea");
         tamanoFiguras = Validadores.validarIngresoEnteros(sc);
@@ -199,48 +233,6 @@ public class App {
         System.out.println("Para estos ejercicios solo se necesita el tamaño del que será cada figura");
         System.out.println( );
 
-        System.out.println("F1: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF1();
-
-        System.out.println("F2: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF2();
-        
-        System.out.println("F3: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF3();
-
-        System.out.println("F4: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF4();
-
-        System.out.println("F5: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF5();
-
-        System.out.println("F6: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF6();
-
-        System.out.println("F7: ");
-        System.out.print("Ingrese el tamaño: ");
-        nivelesFiguras = Validadores.validarIngresoEnteros(sc);
-        CJ.setCjTamano(nivelesFiguras);
-        CJ.cjF7();
-
         System.out.println("F15: ");
         System.out.print("Ingrese el nivel que desea que tenga la figura: ");
         nivelesFiguras = Validadores.validarIngresoEnteros(sc);
@@ -271,14 +263,16 @@ public class App {
         DLK.setDkNivel(nivelesFiguras);
         DLK.dkF19();
 
-
-
-
         System.out.println("----------------Ejercicios de cadenas de caracteres------------------");
         System.out.println("C01: ");
-
+        System.out.println("Ingrese una frase");
+        fraseUsuario = sc.nextLine();
+        DLK.dKC01(fraseUsuario);
 
         System.out.println("C02: ");
+        System.out.println("Ingrese una frase");
+        fraseUsuario = sc.nextLine();
+        DLK.dKC02(fraseUsuario);
 
 
         System.out.println("C03: ");
@@ -300,9 +294,17 @@ public class App {
 
         System.out.println("----------------Ejercicios de Arrays------------------");
 
+        System.out.println();
+        System.out.println("A01: ");
+        System.out.println("Ingrese 4 porcentajes");
+        porcent1 = Validadores.validarIngresoDouble(sc);
+        porcent2 = Validadores.validarIngresoDouble(sc);
+        porcent3 = Validadores.validarIngresoDouble(sc);
+        porcent4 = Validadores.validarIngresoDouble(sc);
+        DLK.dKA01(porcent1, porcent2, porcent3, porcent4);
 
 
-
+        System.out.println();
         System.out.println("A02: ");
         System.out.println("Ingresa el caracter que se usara para dibujar las iniciales del nombre");
         caracterUsuario = Validadores.validarIngresoCaracteres(sc);
@@ -317,9 +319,15 @@ public class App {
 
         System.out.println("----------------Ejercicios de Loading------------------");
 
+        System.out.println();
+        System.out.println("L01: ");
+        DLK.dKL01();
 
-
-
+        System.out.println();
+        System.out.println("L02: ");
+        System.out.println("Ingrese un caracter: ");
+        caracterUsuario = Validadores.validarIngresoCaracteres(sc);
+        DLK.dKL02(caracterUsuario);
 
         System.out.println("L03: ");
         System.out.println("Ingresa el caracter que se usara en el loading");
