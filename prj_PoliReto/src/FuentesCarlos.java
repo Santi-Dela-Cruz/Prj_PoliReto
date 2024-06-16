@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 /**
  *Clase que realiza las series numericas del 8 al 12 y las series de caracteres 1 y 2
@@ -107,4 +108,172 @@ public class FuentesCarlos {
     
     
     }
+
+    public void CFC06(String cfFrase){
+
+        String fraseInvertida = invertirYCambiarConsonantes(cfFrase);
+
+        System.out.println("Frase invertida con consonantes cambiadas a mayúsculas: " + fraseInvertida);
+    }
+
+    
+    private static String invertirYCambiarConsonantes(String frase) {
+        
+        char[] caracteres = frase.toCharArray();
+
+        
+        int n = caracteres.length;
+        for (int i = 0; i < n / 2; i++) {
+            char temp = caracteres[i];
+            caracteres[i] = cambiarConsonante(caracteres[n - 1 - i]);
+            caracteres[n - 1 - i] = cambiarConsonante(temp);
+        }
+
+
+        return new String(caracteres);
+    }
+
+    
+    private static char cambiarConsonante(char c) {
+        if (Character.isLetter(c) && !"AEIOUaeiou".contains(String.valueOf(c))) {
+            return Character.toUpperCase(c);
+        } else {
+            return c;
+        }
+    }
+
+    public void CFA06(String nombre, String apellido){
+        int longitudMax = Math.max(nombre.length(), apellido.length());
+        char[][] matriz = new char[longitudMax][longitudMax];
+
+        // Inicializar la matriz con espacios en blanco
+        for (int i = 0; i < longitudMax; i++) {
+            for (int j = 0; j < longitudMax; j++) {
+                matriz[i][j] = ' ';
+            }
+        }
+
+        // Colocar las letras del nombre en la diagonal principal
+        for (int i = 0; i < nombre.length(); i++) {
+            matriz[i][i] = nombre.charAt(i);
+        }
+
+        // Colocar las letras del apellido en la diagonal secundaria
+        for (int i = 0; i < apellido.length(); i++) {
+            matriz[i][longitudMax - 1 - i] = apellido.charAt(i);
+        }
+
+        // Imprimir la matriz resultante
+        for (int i = 0; i < longitudMax; i++) {
+            for (int j = 0; j < longitudMax; j++) {
+                System.out.print(matriz[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
+    public void animarBarraDeProgreso() throws InterruptedException {
+        int duracionAnimacion = 5000; 
+        int intervaloActualizacion = 200; 
+        int pasos = duracionAnimacion / intervaloActualizacion; 
+        int progreso = 0; 
+        
+        for (int paso = 0; paso <= pasos; paso++) {
+            
+            progreso = paso * 100 / pasos;
+        
+            CFL07(progreso);
+            
+
+            Thread.sleep(intervaloActualizacion);
+            
+            limpiarConsola();
+        }
+        
+        CFL07(100);
+    }
+    public void CFL07(int porcentaje){
+        
+        int longitudBarra = 20;
+
+        int caracteresLlenos = porcentaje * longitudBarra / 100;
+        int caracteresVacios = longitudBarra - caracteresLlenos;
+        int indicePunta = porcentaje % 4;
+        String barra = "[";
+        
+        for (int i = 0; i < caracteresLlenos; i++) {
+            barra += "=";
+        }
+        
+        switch (indicePunta) {
+            case 0:
+                barra += "/";
+                break;
+            case 1:
+                barra += "|";
+                break;
+            case 2:
+                barra += "-";
+                break;
+            case 3:
+                barra += "\\";
+                break;
+            default:
+                break;
+        }
+        
+        
+        for (int i = 0; i < caracteresVacios; i++) {
+            barra += " ";
+        }
+        
+        barra += "] ";
+
+        barra += porcentaje + "%";
+
+        System.out.println(barra+"\r");
+    }
+    public static void limpiarConsola() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+        }
+    }
+    
+    public void CFL08(String nombre, String apellido){
+        String nombreCompleto = nombre +" "+apellido;
+        mostrarCarga(nombreCompleto);
+    }
+    public void mostrarCarga(String texto) {
+        int longitudTexto = texto.length();
+        int progreso = 0;
+
+        for (int i = 0; i <= longitudTexto; i++) {
+            progreso = i * 100 / longitudTexto;
+
+            String barra = "[";
+
+            for (int j = 0; j < i; j++) {
+                barra += texto.charAt(j);
+            }
+
+            for (int j = i; j < longitudTexto; j++) {
+                barra += " ";
+            }
+
+            barra += "] " + progreso + "%";
+
+            System.out.print("\r" + barra);
+
+        
+            try {
+                Thread.sleep(100); 
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println();
+    }
 }
+        
+

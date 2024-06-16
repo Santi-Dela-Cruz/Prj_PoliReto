@@ -14,8 +14,10 @@ public class App {
         char letraFinalUsuario;
         String fraseUsuario;
         String fraseUsuario2;
+        String nombre, apellido;
         char letraAEliminar;
         double porcent1, porcent2, porcent3, porcent4;
+        int porcentaje = 20;
         
 
         // Instanciaminetos
@@ -292,6 +294,16 @@ public class App {
         System.out.println("");
 
 
+        System.out.println("C06: ");
+        System.out.println("Ingrese una frase:");
+        sc.nextLine();
+        fraseUsuario = sc.nextLine();
+        CF.CFC06(fraseUsuario);
+
+
+
+
+
         System.out.println("----------------Ejercicios de Arrays------------------");
 
         System.out.println();
@@ -312,6 +324,14 @@ public class App {
         tamanoLetras = Validadores.validarIngresoEnteros(sc);
         MC.MCA02(tamanoLetras, caracterUsuario);
         System.out.println("");
+
+        System.out.println("A02: ");
+        System.out.println("Ingrese su nombre:");
+        sc.nextLine();
+        nombre = sc.nextLine();
+        System.out.println("Ingrese su apellido:");
+        apellido = sc.nextLine();
+        CF.CFA06(nombre,apellido);
 
 
 
@@ -338,6 +358,19 @@ public class App {
         System.out.println("L04: ");
         MC.MCL04();
         System.out.println("");
+
+        
+        System.out.println("L07: ");
+        CF.CFL07(porcentaje);
+        System.out.println("");
+
+        System.out.println("L08: ");
+        System.out.println("Ingrese su nombre:");
+        sc.nextLine();
+        nombre = sc.nextLine();
+        System.out.println("Ingrese su apellido:");
+        apellido = sc.nextLine();
+        CF.CFL08(nombre,apellido);
 
 
 
