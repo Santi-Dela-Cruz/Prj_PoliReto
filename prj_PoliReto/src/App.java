@@ -291,6 +291,16 @@ public class App {
         MC.MCC04(fraseUsuario, letraAEliminar);
         System.out.println("");
 
+        System.out.println("C08: ");
+        System.out.println("Ingrese una frase  porfavor");
+        fraseUsuario = sc.nextLine();
+        ZD.zdC08(fraseUsuario);
+        System.out.println("");
+
+        System.out.println("C09: ");
+        System.out.println("Anagrama de palabras");
+        ZD.zdC09(args);
+
 
         System.out.println("----------------Ejercicios de Arrays------------------");
 
@@ -343,6 +353,16 @@ public class App {
 
 
 
+
+
+
+        System.out.println("L11: ");
+        ZD.zdL11();
+        System.out.println("");
+
+        System.out.println("L12: ");
+        ZD.zdL12();
+        System.out.println("");
     
     
         System.out.println("Finalizacion del programa");
