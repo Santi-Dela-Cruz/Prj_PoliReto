@@ -1,3 +1,10 @@
+import java.util.Random;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+
 /**
  * Esta clase contiene varias funciones que imprimen figuras
  * @author Dante Zambrano
@@ -155,4 +162,122 @@ public class ZambranoDante {
         }
     
     }
+
+    public void zdL11(){
+        
+        int nivel = 0;
+        do {
+            
+            Random rand = new Random();
+            int cont = rand.nextInt(11); 
+            
+           
+                for (int i = 0; i < cont; i++) {
+                    System.out.print("-");
+                }
+                System.out.print("   ");
+                for (int i = 0; i < cont; i++) {
+                    System.out.print("-");
+                }
+                System.out.println();
+            
+            nivel ++;
+        } while (nivel<50);
+    }
+
+    String mapa = "..".repeat(40);
+    public void zdL12(){
+        Boolean posiBossIzq = true;
+       
+        
+        if(posiBossIzq) {
+            for (int i = 0; i < mapa.length(); i++) 
+                setBoss(i);
+            for (int i = mapa.length(); i >= 0; i--) 
+                setBoss(i);
+        } 
+    }
+    
+    public void setBoss(int posicionBoss) {
+        String cabello = "   \\|||/";
+        String ojos ="   (> <)" ;      
+        String boca ="ooO-(_)-Ooo";
+        String movimientoCabello     = "\r"
+                                    + ".".repeat(posicionBoss) 
+                                    + cabello
+                                    + ".".repeat(mapa.length()-posicionBoss);
+        String movimientoOjos     = "\r"
+                                    + ".".repeat(posicionBoss) 
+                                    + ojos
+                                    + ".".repeat(mapa.length()-posicionBoss);
+        String movimientoBoca     = "\r"
+                                    + ".".repeat(posicionBoss) 
+                                    + boca
+                                    + ".".repeat(mapa.length()-posicionBoss);
+        
+        System.out.print("\033[H\033[2J"); 
+        System.out.print( "\r" +movimientoCabello + "\n" + movimientoOjos + "\n" + movimientoBoca + "\n");
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException e) {}
+    }
+
+    public void zdC08(String frase){
+        if (frase.length() >= 1) {
+            StringBuilder fraseModificada = new StringBuilder();
+            boolean mayuscula = true;
+    
+            for (int i = 0; i < frase.length(); i++) {
+                char c = frase.charAt(i);
+                if (Character.isLetter(c)) {
+                    if (mayuscula) {
+                        fraseModificada.append(Character.toUpperCase(c));
+                    } else {
+                        fraseModificada.append(Character.toLowerCase(c));
+                    }
+                    mayuscula = !mayuscula; 
+                } else {
+                    fraseModificada.append(c); 
+                }
+            }
+    
+            System.out.println(fraseModificada.toString() + ".");
+        } else {
+            System.out.println("La frase debe tener al menos 1 letra.");
+        }
+    }
+
+    public void zdC09(String[] args) {
+        Set<String> palabras = new HashSet<>(Arrays.asList("delira", "lidera", "Ballena", "llenaba", "Alondra", "Ladrona", "España", "apañes", "Enrique", "quieren"));
+        Scanner scanner = new Scanner(System.in);
+
+        for (String palabra : palabras) {
+            System.out.println("Ingresa un anagrama de la palabra: " + palabra);
+            Set<String> anagramas = new HashSet<>();
+            for (int i = 0; i < 3; i++) {
+                String entrada = scanner.nextLine();
+                if (zdAnagrama(palabra, entrada)) {
+                    System.out.println("Muy bien!!!");
+                    anagramas.add(entrada);
+                    break;
+                } else {
+                    System.out.println("Incorrecto. Inténtalo de nuevo.");
+                }
+            }
+            if (anagramas.isEmpty()) {
+                System.out.println("Respuesta: " + anagramas);
+            }
+        }
+    }
+
+    private  boolean zdAnagrama(String palabra, String entrada) {
+        char[] palabraArray = palabra.toCharArray();
+        char[] entradaArray = entrada.toCharArray();
+        Arrays.sort(palabraArray);
+        Arrays.sort(entradaArray);
+        return Arrays.equals(palabraArray, entradaArray);
+    }
+
+
+
 }
