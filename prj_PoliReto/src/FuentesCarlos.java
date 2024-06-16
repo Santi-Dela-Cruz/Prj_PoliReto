@@ -1,3 +1,5 @@
+fuentes carlos
+
 
 /**
  *Clase que realiza las series numericas del 8 al 12 y las series de caracteres 1 y 2
