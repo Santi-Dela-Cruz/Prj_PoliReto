@@ -1,11 +1,23 @@
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Poli Retos
- * clase EcheverrriaGabriela
+ * clase EcheverriaGabriela
  * @version 1.0
  * @ Gabriela Echeverria
  */
 public class EcheverriaGabriela {
     private int GEnum;
+    private char[][] matrix;
+    private String fullName = "Gabriela Echeverria";
+    private String amArchivo = "archivo";
+    private double amNumero = 100.0;
+    private double amProgreso = 0.0;
+    private double amTotal = 100.0;
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private Random random = new Random();
 
     /**
      * Obtiene el tamaño
@@ -152,5 +164,133 @@ public class EcheverriaGabriela {
             }
         }
         return true;
+    }
+
+    /**
+     * Método para eliminar un caracter de una frase y convertir la frase resultante a mayúsculas
+     * @param frase La frase original
+     * @param caracter El caracter a eliminar
+     */
+    public void GEC07(String frase, char caracter) {
+        int verificateChar = frase.indexOf(caracter);
+
+        if (verificateChar != -1) {
+            System.out.println((frase.replace(Character.toString(caracter), "")).toUpperCase());
+        } else {
+            System.out.println("Caracter no encontrado en la frase");
+        }
+    }
+
+    /**
+     * Método para imprimir el nombre completo en una matriz
+     */
+    public void GEA05() {
+        int size = fullName.length();
+        matrix = new char[size][size];
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                matrix[i][j] = ' ';
+            }
+        }
+
+        for (char c : fullName.toCharArray()) {
+            int x, y;
+            do {
+                x = random.nextInt(size);
+                y = random.nextInt(size);
+            } while (matrix[x][y] != ' ');
+
+            if (matrix[x][y] == c) {
+                matrix[x][y] = '*';
+            } else {
+                matrix[x][y] = c;
+            }
+            amImprimirMatriz();
+            delay(500);
+        }
+    }
+
+    /**
+     * Método para imprimir la matriz
+     */
+    public void amImprimirMatriz() {
+        for (char[] row : matrix) {
+            for (char c : row) {
+                System.out.print(c + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    /**
+     * Método para pausar la ejecución
+     * @param amTiempo El tiempo de pausa en milisegundos
+     */
+    public void delay(int amTiempo) {
+        try {
+            TimeUnit.MILLISECONDS.sleep(amTiempo);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    /**
+     * Método para simular una barra de carga con el nombre completo
+     * @param nombre El nombre a usar
+     * @param apellido El apellido a usar
+     */
+    public void GEL09(String nombre, String apellido) {
+        int tamanio = nombre.length() + apellido.length() + 1;
+        char[] nombreChar = nombre.toCharArray();
+        char[] apellidoChar = apellido.toCharArray();
+        int porcentaje = 0;
+        StringBuilder carga = new StringBuilder("[" + " ".repeat(tamanio) + "]");
+        for (int i = 0; i < tamanio; i++) {
+            if (i < nombre.length()) {
+                carga.setCharAt(i + 1, nombreChar[i]);
+            } else if (i == nombre.length()) {
+                carga.setCharAt(i + 1, ' ');
+            } else {
+                carga.setCharAt(i + 1, apellidoChar[i - nombre.length() - 1]);
+            }
+            porcentaje = (i + 1) * 100 / tamanio;
+            System.out.print("\r" + carga);
+            System.out.print(" " + porcentaje + "%");
+            carga.setCharAt(i + 1, ' ');
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("\n");
+    }
+
+    /**
+     * Método para simular la descarga de un archivo
+     */
+    public void GeL10() {
+        System.out.println("Descargando " + amArchivo + " (" + amNumero + " kB)");
+        while (amProgreso < amTotal) {
+            amProgreso += new Random().nextInt(5) + 1;
+            int progresoPorcentaje = (int) ((amProgreso / amTotal) * 100);
+            StringBuilder barraProgreso = new StringBuilder();
+            for (int i = 0; i < 50; i++) {
+                if (i < progresoPorcentaje / 2) {
+                    barraProgreso.append("-");
+                } else {
+                    barraProgreso.append(" ");
+                }
+            }
+            System.out.print("\r" + ANSI_GREEN + barraProgreso + ANSI_RESET + " " + String.format("%.1f", amProgreso) + " / " + amNumero + " kB");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("\n¡Descarga completa!");
     }
 }
