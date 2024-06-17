@@ -13,7 +13,6 @@ public class App {
         int nivelesFiguras;
         char letraFinalUsuario;
         String fraseUsuario;
-        String fraseUsuario2;
         String nombre, apellido;
         char letraAEliminar;
         double porcent1, porcent2, porcent3, porcent4;
@@ -287,22 +286,23 @@ public class App {
 
         System.out.println("C04: ");
         System.out.println("Ingresa una frase");
-        fraseUsuario2 = sc.nextLine();
+        fraseUsuario = sc.nextLine();
         System.out.println("Ingresa una letra a eliminar");
         letraAEliminar = Validadores.validarIngresoLetra(sc);
         MC.MCC04(fraseUsuario, letraAEliminar);
         System.out.println("");
 
+        System.out.println("C05: ");
+        System.out.print("Ingrese una frase: ");
+        sc.nextLine();
+        fraseUsuario = sc.nextLine();
+        CJ.cjC05(fraseUsuario);
 
         System.out.println("C06: ");
         System.out.println("Ingrese una frase:");
         sc.nextLine();
         fraseUsuario = sc.nextLine();
         CF.CFC06(fraseUsuario);
-
-
-
-
 
         System.out.println("----------------Ejercicios de Arrays------------------");
 
@@ -333,7 +333,9 @@ public class App {
         apellido = sc.nextLine();
         CF.CFA06(nombre,apellido);
 
-
+        System.out.println();
+        System.out.println("A03: ");
+        CJ.cjA03();
 
 
 
@@ -359,6 +361,14 @@ public class App {
         MC.MCL04();
         System.out.println("");
 
+        System.out.println();
+        System.out.println("L05: ");
+        CJ.cjL05(20, 10000);
+        System.out.println();
+
+        System.out.println("L06:");
+        CJ.cjL06();
+        System.out.println();
         
         System.out.println("L07: ");
         CF.CFL07(porcentaje);
